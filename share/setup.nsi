@@ -1,4 +1,4 @@
-Name Torrentcoin
+Name tornt
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
@@ -6,8 +6,8 @@ SetCompressor /SOLID lzma
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
 !define VERSION 0.8.7.1
-!define COMPANY "Torrentcoin project"
-!define URL http://www.torrentcoin.org/
+!define COMPANY "tornt project"
+!define URL http://www.tornt.org/
 
 # MUI Symbol Definitions
 !define MUI_ICON "../share/pixmaps/bitcoin.ico"
@@ -19,8 +19,8 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER Torrentcoin
-!define MUI_FINISHPAGE_RUN $INSTDIR\torrentcoin-qt.exe
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER tornt
+!define MUI_FINISHPAGE_RUN $INSTDIR\tornt-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
 !define MUI_UNWELCOMEFINISHPAGE_BITMAP "../share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
@@ -45,14 +45,14 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile torrentcoin-${VERSION}-win32-setup.exe
-InstallDir $PROGRAMFILES\Torrentcoin
+OutFile tornt-${VERSION}-win32-setup.exe
+InstallDir $PROGRAMFILES\tornt
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
 VIProductVersion ${VERSION}
-VIAddVersionKey ProductName Torrentcoin
+VIAddVersionKey ProductName tornt
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
@@ -66,18 +66,18 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File ../release/torrentcoin-qt.exe
+    File ../release/tornt-qt.exe
     File /oname=COPYING.txt ../COPYING
     File /oname=readme.txt ../doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File ../src/torrentcoind.exe
+    File ../src/torntd.exe
     SetOutPath $INSTDIR\src
     File /r /x *.exe /x *.o ../src\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 
     # Remove old wxwidgets-based-bitcoin executable and locales:
-    Delete /REBOOTOK $INSTDIR\torrentcoin.exe
+    Delete /REBOOTOK $INSTDIR\tornt.exe
     RMDir /r /REBOOTOK $INSTDIR\locale
 SectionEnd
 
@@ -87,8 +87,8 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Torrentcoin.lnk" $INSTDIR\torrentcoin-qt.exe
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall Torrentcoin.lnk" $INSTDIR\uninstall.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\tornt.lnk" $INSTDIR\tornt-qt.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall tornt.lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "${VERSION}"
@@ -98,10 +98,10 @@ Section -post SEC0001
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" UninstallString $INSTDIR\uninstall.exe
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
-    WriteRegStr HKCR "torrentcoin" "URL Protocol" ""
-    WriteRegStr HKCR "torrentcoin" "" "URL:Torrentcoin"
-    WriteRegStr HKCR "torrentcoin\DefaultIcon" "" $INSTDIR\torrentcoin-qt.exe
-    WriteRegStr HKCR "torrentcoin\shell\open\command" "" '"$INSTDIR\torrentcoin-qt.exe" "%1"'
+    WriteRegStr HKCR "tornt" "URL Protocol" ""
+    WriteRegStr HKCR "tornt" "" "URL:tornt"
+    WriteRegStr HKCR "tornt\DefaultIcon" "" $INSTDIR\tornt-qt.exe
+    WriteRegStr HKCR "tornt\shell\open\command" "" '"$INSTDIR\tornt-qt.exe" "%1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -119,7 +119,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\torrentcoin-qt.exe
+    Delete /REBOOTOK $INSTDIR\tornt-qt.exe
     Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -129,9 +129,9 @@ SectionEnd
 
 Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall Torrentcoin.lnk"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Torrentcoin.lnk"
-    Delete /REBOOTOK "$SMSTARTUP\Torrentcoin.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall tornt.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\tornt.lnk"
+    Delete /REBOOTOK "$SMSTARTUP\tornt.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log
@@ -139,7 +139,7 @@ Section -un.post UNSEC0001
     DeleteRegValue HKCU "${REGKEY}" Path
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
-    DeleteRegKey HKCR "torrentcoin"
+    DeleteRegKey HKCR "tornt"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0

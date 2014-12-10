@@ -1,7 +1,7 @@
-#include "torrentpage.h"
-#include "ui_torrentpage.h"
+#include "torntpage.h"
+#include "ui_torntpage.h"
 #include "clientmodel.h"
-#include "torrenttablemodel.h"
+#include "tornttablemodel.h"
 #include "bitcoingui.h"
 #include "guiutil.h"
 #include "util.h"
@@ -29,7 +29,7 @@
 using namespace boost;
 using namespace json_spirit;
 
-int getTorrentBlockCount()
+int gettorntBlockCount()
 {
     QSqlQuery query;
     query.exec(QString("select blockindex from blockindex"));
@@ -41,7 +41,7 @@ int getTorrentBlockCount()
 }
 
 
-void updateTorrent(int index)
+void updatetornt(int index)
 {
     try{
         QString s = QString::number(index, 10);  
@@ -63,14 +63,14 @@ void updateTorrent(int index)
                 {
 
                     args.clear();
-                    args.push_back("gettorrent");
+                    args.push_back("gettornt");
                     args.push_back(v.get_str());
                     Value value = tableRPC.execute(args[0],RPCConvertValues(args[0], std::vector<std::string>(args.begin() + 1, args.end())));
                     if (value.type() == obj_type)
                     {
                         Object reply = value.get_obj();
                         QSqlQuery query;
-                        query.exec(QString("insert into torrent values('%1','%2',%3)").arg(QString::fromStdString(find_value(reply, "title").get_str())).arg(QString::fromStdString(v.get_str())).arg(index));
+                        query.exec(QString("insert into tornt values('%1','%2',%3)").arg(QString::fromStdString(find_value(reply, "title").get_str())).arg(QString::fromStdString(v.get_str())).arg(index));
                     }
                 }
             }
@@ -80,15 +80,15 @@ void updateTorrent(int index)
         query.exec(QString("UPDATE blockindex set blockindex = %1").arg(index));
     }catch (json_spirit::Object& objError)
     {
-        throw std::runtime_error("updateTorrent error");
+        throw std::runtime_error("updatetornt error");
     }
     catch(std::runtime_error& e) 
     {  
-          throw std::runtime_error("updateTorrent error");
+          throw std::runtime_error("updatetornt error");
     }
     catch (std::exception& e)
     {
-        throw std::runtime_error("updateTorrent error");
+        throw std::runtime_error("updatetornt error");
     }
 }
 
@@ -103,30 +103,30 @@ class TDBExecutor: public QObject
         void start();
 
     signals:
-    void refreshTorrentTable();    
+    void refreshtorntTable();    
 };
 
-#include "torrentpage.moc"
+#include "torntpage.moc"
 
 void TDBExecutor::start()
 {
     try{
-        int torrentblockcount = getTorrentBlockCount();
-        while((torrentblockcount < nBestHeight))
+        int torntblockcount = gettorntBlockCount();
+        while((torntblockcount < nBestHeight))
         { 
-            updateTorrent(torrentblockcount);
-            torrentblockcount++;
+            updatetornt(torntblockcount);
+            torntblockcount++;
         } 
     }catch(std::runtime_error& e) 
     {  
-          emit refreshTorrentTable();
+          emit refreshtorntTable();
     }
-    emit refreshTorrentTable();
+    emit refreshtorntTable();
 }
 
-TorrentPage::TorrentPage(QWidget *parent) :
+torntPage::torntPage(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::TorrentPage),
+    ui(new Ui::torntPage),
     model(0)
 {
     ui->setupUi(this);
@@ -136,14 +136,14 @@ TorrentPage::TorrentPage(QWidget *parent) :
 
 
 
-TorrentPage::~TorrentPage()
+torntPage::~torntPage()
 {
     emit stopExecutor();
     
     delete ui;
 }
 
-void TorrentPage::setModel(TorrentTableModel *model)
+void torntPage::setModel(torntTableModel *model)
 {
     this->model = model;
     if(!model)
@@ -162,11 +162,11 @@ void TorrentPage::setModel(TorrentTableModel *model)
 
     // Set column widths
 #if QT_VERSION < 0x050000
-    ui->tableView->horizontalHeader()->setResizeMode(TorrentTableModel::Title, QHeaderView::Stretch);
-    ui->tableView->horizontalHeader()->setResizeMode(TorrentTableModel::Address, QHeaderView::ResizeToContents);
+    ui->tableView->horizontalHeader()->setResizeMode(torntTableModel::Title, QHeaderView::Stretch);
+    ui->tableView->horizontalHeader()->setResizeMode(torntTableModel::Address, QHeaderView::ResizeToContents);
 #else
-    ui->tableView->horizontalHeader()->setSectionResizeMode(TorrentTableModel::Title, QHeaderView::Stretch);
-    ui->tableView->horizontalHeader()->setSectionResizeMode(TorrentTableModel::Address, QHeaderView::ResizeToContents);
+    ui->tableView->horizontalHeader()->setSectionResizeMode(torntTableModel::Title, QHeaderView::Stretch);
+    ui->tableView->horizontalHeader()->setSectionResizeMode(torntTableModel::Address, QHeaderView::ResizeToContents);
 #endif
 
 
@@ -179,7 +179,7 @@ void TorrentPage::setModel(TorrentTableModel *model)
     connect(ui->searchButton, SIGNAL(clicked()), this, SLOT(searchButtonClicked()));
 }
 
-void TorrentPage::setClientModel(ClientModel *model)
+void torntPage::setClientModel(ClientModel *model)
 {
     this->clientModel = model;
     if(model)
@@ -190,14 +190,14 @@ void TorrentPage::setClientModel(ClientModel *model)
 
 
 
-void TorrentPage::startExecutor()
+void torntPage::startExecutor()
 {
     QThread* thread = new QThread;
     TDBExecutor *executor = new TDBExecutor();
     executor->moveToThread(thread);
 
 
-    connect(executor, SIGNAL(refreshTorrentTable()), this, SLOT(refreshTorrentTable()));
+    connect(executor, SIGNAL(refreshtorntTable()), this, SLOT(refreshtorntTable()));
     connect(thread, SIGNAL(started()), executor, SLOT(start()));
     connect(this, SIGNAL(stopExecutor()), executor, SLOT(deleteLater()));
     connect(this, SIGNAL(stopExecutor()), thread, SLOT(quit()));
@@ -207,28 +207,28 @@ void TorrentPage::startExecutor()
 }
 
 
-void TorrentPage::refreshTorrentTable()
+void torntPage::refreshtorntTable()
 {
-    model->refreshTorrentTable();
+    model->refreshtorntTable();
 }
 
 
 
-void TorrentPage::showDetails()
+void torntPage::showDetails()
 {
     if(!ui->tableView->selectionModel())
         return;
     QModelIndexList selection = ui->tableView->selectionModel()->selectedRows();
     if(!selection.isEmpty())
     {
-        QString html = selection.at(0).data(TorrentTableModel::TorrentRole).toString();
+        QString html = selection.at(0).data(torntTableModel::torntRole).toString();
         TransactionDescDialog dlg(html);
         dlg.exec();
     }
 }
 
 
-void TorrentPage::searchButtonClicked()
+void torntPage::searchButtonClicked()
 {
    
 }

@@ -1,15 +1,15 @@
-Torrentcoin integration/staging tree
+tornt integration/staging tree
 ================================
 
-http://www.torrentcoin.org
+http://www.tornt.org
 
 Copyright (c) 2009-2014 Bitcoin Developers
-Copyright (c) 2011-2014 Torrentcoin Developers
+Copyright (c) 2011-2014 tornt Developers
 
-What is Torrentcoin?
+What is tornt?
 ----------------
 
-Torrentcoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
+tornt is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
  - 2.5 minute block targets
  - ~84 million total coins
  - Block reward is controlled by moore's law: 2222222/(((Difficulty+2600)/9)^2)
@@ -17,12 +17,12 @@ Torrentcoin is a lite version of Bitcoin using scrypt as a proof-of-work algorit
 
 
 For more information, as well as an immediately useable, binary version of
-the Torrentcoin client sofware, see http://www.torrentcoin.org.
+the tornt client sofware, see http://www.tornt.org.
 
 License
 -------
 
-Torrentcoin is released under the terms of the MIT license. See `COPYING` for more
+tornt is released under the terms of the MIT license. See `COPYING` for more
 information or see http://opensource.org/licenses/MIT.
 
 Development process
@@ -31,7 +31,7 @@ Development process
 Developers work in their own trees, then submit pull requests when they think
 their feature or bug fix is ready.
 
-If it is a simple/trivial/non-controversial change, then one of the Torrentcoin
+If it is a simple/trivial/non-controversial change, then one of the tornt
 development team members simply pulls it.
 
 If it is a *more complicated or potentially controversial* change, then the patch
@@ -45,7 +45,7 @@ controversial.
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
 completely stable. [Tags](https://github.com/bitcoin/bitcoin/tags) are created
-regularly to indicate new official, stable release versions of Torrentcoin.
+regularly to indicate new official, stable release versions of tornt.
 
 Testing
 -------
@@ -68,5 +68,5 @@ Unit tests for the GUI code are in `src/qt/test/`. To compile and run them:
 
     qmake BITCOIN_QT_TEST=1 -o Makefile.test bitcoin-qt.pro
     make -f Makefile.test
-    ./torrentcoin-qt_test
+    ./tornt-qt_test
 

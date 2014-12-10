@@ -1,8 +1,8 @@
-Torrentcoin 0.8.x BETA
+tornt 0.8.x BETA
 ====================
 
 Copyright (c) 2009-2014 Bitcoin Developers
-Copyright (c) 2011-2014 Torrentcoin Developers
+Copyright (c) 2011-2014 tornt Developers
 
 Distributed under the MIT/X11 software license, see the accompanying
 file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -12,7 +12,7 @@ cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cry
 
 Intro
 ---------------------
-Torrentcoin is a free open source peer-to-peer electronic cash system that is
+tornt is a free open source peer-to-peer electronic cash system that is
 completely decentralized, without the need for a central server or trusted
 parties.  Users hold the crypto keys to their own money and transact directly
 with each other, with the help of a P2P network to check for double-spending.
@@ -20,17 +20,17 @@ with each other, with the help of a P2P network to check for double-spending.
 
 Setup
 ---------------------
-You need the Qt4 run-time libraries to run Torrentcoin-Qt. On Debian or Ubuntu:
+You need the Qt4 run-time libraries to run tornt-Qt. On Debian or Ubuntu:
 	`sudo apt-get install libqtgui4`
 
 Unpack the files into a directory and run:
 
-- bin/32/torrentcoin-qt (GUI, 32-bit)
-- bin/32/torrentcoind (headless, 32-bit)
-- bin/64/torrentcoin-qt (GUI, 64-bit)
-- bin/64/torrentcoind (headless, 64-bit)
+- bin/32/tornt-qt (GUI, 32-bit)
+- bin/32/torntd (headless, 32-bit)
+- bin/64/tornt-qt (GUI, 64-bit)
+- bin/64/torntd (headless, 64-bit)
 
-See the documentation at the [Torrentcoin Wiki](http://torrentcoin.info)
+See the documentation at the [tornt Wiki](http://tornt.info)
 for help and more information.
 
 

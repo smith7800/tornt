@@ -14,7 +14,7 @@
 #include "walletframe.h"
 #include "optionsmodel.h"
 #include "transactiondescdialog.h"
-#include "torrentpage.h"
+#include "torntpage.h"
 #include "bitcoinunits.h"
 #include "guiconstants.h"
 #include "notificator.h"
@@ -57,7 +57,7 @@ void createTable()
 {
     QSqlQuery query;
     query.exec("CREATE TABLE IF NOT EXISTS blockindex(blockindex INTEGER)");
-    query.exec("CREATE TABLE IF NOT EXISTS torrent(title TEXT, txid TEXT UNIQUE,blockindex INTEGER)");
+    query.exec("CREATE TABLE IF NOT EXISTS tornt(title TEXT, txid TEXT UNIQUE,blockindex INTEGER)");
 
     query.exec(QString("select blockindex from blockindex"));
     if (!query.next())
@@ -80,7 +80,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent) :
     prevBlocks(0)
 {
     restoreWindowGeometry();
-    setWindowTitle(tr("Torrentcoin") + " - " + tr("Wallet"));
+    setWindowTitle(tr("tornt") + " - " + tr("Wallet"));
 #ifndef Q_OS_MAC
     QApplication::setWindowIcon(QIcon(":icons/bitcoin"));
     setWindowIcon(QIcon(":icons/bitcoin"));
@@ -164,7 +164,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent) :
     setWalletActionsEnabled(false);
 
     db  = QSqlDatabase::addDatabase("QSQLITE"); 
-    db.setDatabaseName(QString::fromStdString(GetDefaultDataDir().string()+"/torrent.dat")); 
+    db.setDatabaseName(QString::fromStdString(GetDefaultDataDir().string()+"/tornt.dat")); 
     db.open();
     createTable();
 }
@@ -193,7 +193,7 @@ void BitcoinGUI::createActions()
     tabGroup->addAction(overviewAction);
 
     sendCoinsAction = new QAction(QIcon(":/icons/send"), tr("&Send"), this);
-    sendCoinsAction->setStatusTip(tr("Send coins to a Torrentcoin address"));
+    sendCoinsAction->setStatusTip(tr("Send coins to a tornt address"));
     sendCoinsAction->setToolTip(sendCoinsAction->statusTip());
     sendCoinsAction->setCheckable(true);
     sendCoinsAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_2));
@@ -219,11 +219,11 @@ void BitcoinGUI::createActions()
     addressBookAction->setCheckable(true);
     addressBookAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
     tabGroup->addAction(addressBookAction);
-    torrentPageAction = new QAction(QIcon(":/icons/magnet"), tr("&Torrent"), this);
-    torrentPageAction->setToolTip(tr("Edit the list of stored addresses and labels"));
-    torrentPageAction->setCheckable(true);
-    torrentPageAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
-    tabGroup->addAction(torrentPageAction);
+    torntPageAction = new QAction(QIcon(":/icons/magnet"), tr("&tornt"), this);
+    torntPageAction->setToolTip(tr("Edit the list of stored addresses and labels"));
+    torntPageAction->setCheckable(true);
+    torntPageAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
+    tabGroup->addAction(torntPageAction);
 
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(gotoOverviewPage()));
@@ -235,20 +235,20 @@ void BitcoinGUI::createActions()
     connect(historyAction, SIGNAL(triggered()), this, SLOT(gotoHistoryPage()));
     connect(addressBookAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(addressBookAction, SIGNAL(triggered()), this, SLOT(gotoAddressBookPage()));
-    connect(torrentPageAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
-    connect(torrentPageAction, SIGNAL(triggered()), this, SLOT(gotoTorrentPage()));
+    connect(torntPageAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(torntPageAction, SIGNAL(triggered()), this, SLOT(gototorntPage()));
     quitAction = new QAction(QIcon(":/icons/quit"), tr("E&xit"), this);
     quitAction->setStatusTip(tr("Quit application"));
     quitAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
     quitAction->setMenuRole(QAction::QuitRole);
-    aboutAction = new QAction(QIcon(":/icons/bitcoin"), tr("&About Torrentcoin"), this);
-    aboutAction->setStatusTip(tr("Show information about Torrentcoin"));
+    aboutAction = new QAction(QIcon(":/icons/bitcoin"), tr("&About tornt"), this);
+    aboutAction->setStatusTip(tr("Show information about tornt"));
     aboutAction->setMenuRole(QAction::AboutRole);
     aboutQtAction = new QAction(QIcon(":/trolltech/qmessagebox/images/qtlogo-64.png"), tr("About &Qt"), this);
     aboutQtAction->setStatusTip(tr("Show information about Qt"));
     aboutQtAction->setMenuRole(QAction::AboutQtRole);
     optionsAction = new QAction(QIcon(":/icons/options"), tr("&Options..."), this);
-    optionsAction->setStatusTip(tr("Modify configuration options for Torrentcoin"));
+    optionsAction->setStatusTip(tr("Modify configuration options for tornt"));
     optionsAction->setMenuRole(QAction::PreferencesRole);
     toggleHideAction = new QAction(QIcon(":/icons/bitcoin"), tr("&Show / Hide"), this);
     toggleHideAction->setStatusTip(tr("Show or hide the main Window"));
@@ -261,9 +261,9 @@ void BitcoinGUI::createActions()
     changePassphraseAction = new QAction(QIcon(":/icons/key"), tr("&Change Passphrase..."), this);
     changePassphraseAction->setStatusTip(tr("Change the passphrase used for wallet encryption"));
     signMessageAction = new QAction(QIcon(":/icons/edit"), tr("Sign &message..."), this);
-    signMessageAction->setStatusTip(tr("Sign messages with your Torrentcoin addresses to prove you own them"));
+    signMessageAction->setStatusTip(tr("Sign messages with your tornt addresses to prove you own them"));
     verifyMessageAction = new QAction(QIcon(":/icons/transaction_0"), tr("&Verify message..."), this);
-    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified Torrentcoin addresses"));
+    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified tornt addresses"));
 
     openRPCConsoleAction = new QAction(QIcon(":/icons/debugwindow"), tr("&Debug window"), this);
     openRPCConsoleAction->setStatusTip(tr("Open debugging and diagnostic console"));
@@ -320,7 +320,7 @@ void BitcoinGUI::createToolBars()
     toolbar->addAction(receiveCoinsAction);
     toolbar->addAction(historyAction);
     toolbar->addAction(addressBookAction);
-	toolbar->addAction(torrentPageAction);
+	toolbar->addAction(torntPageAction);
 }
 
 void BitcoinGUI::setClientModel(ClientModel *clientModel)
@@ -404,7 +404,7 @@ void BitcoinGUI::createTrayIcon()
 #ifndef Q_OS_MAC
     trayIcon = new QSystemTrayIcon(this);
 
-    trayIcon->setToolTip(tr("Torrentcoin client"));
+    trayIcon->setToolTip(tr("tornt client"));
     trayIcon->setIcon(QIcon(":/icons/toolbar"));
     trayIcon->show();
 #endif
@@ -533,9 +533,9 @@ void BitcoinGUI::gotoVerifyMessageTab(QString addr)
     if (walletFrame) walletFrame->gotoVerifyMessageTab(addr);
 }
 
-void BitcoinGUI::gotoTorrentPage()
+void BitcoinGUI::gototorntPage()
 {
-    if (walletFrame) walletFrame->gotoTorrentPage();
+    if (walletFrame) walletFrame->gototorntPage();
 }
 
 void BitcoinGUI::setNumConnections(int count)
@@ -550,7 +550,7 @@ void BitcoinGUI::setNumConnections(int count)
     default: icon = ":/icons/connect_4"; break;
     }
     labelConnectionsIcon->setPixmap(QIcon(icon).pixmap(STATUSBAR_ICONSIZE,STATUSBAR_ICONSIZE));
-    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to Torrentcoin network", "", count));
+    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to tornt network", "", count));
 }
 
 void BitcoinGUI::setNumBlocks(int count, int nTotalBlocks)
@@ -649,7 +649,7 @@ void BitcoinGUI::setNumBlocks(int count, int nTotalBlocks)
 
 void BitcoinGUI::message(const QString &title, const QString &message, unsigned int style, bool *ret)
 {
-    QString strTitle = tr("Torrentcoin"); // default title
+    QString strTitle = tr("tornt"); // default title
     // Default to information icon
     int nMBoxIcon = QMessageBox::Information;
     int nNotifyIcon = Notificator::Information;
@@ -788,7 +788,7 @@ void BitcoinGUI::dropEvent(QDropEvent *event)
         if (nValidUrisFound)
             walletFrame->gotoSendCoinsPage();
         else
-            message(tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid Torrentcoin address or malformed URI parameters."),
+            message(tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid tornt address or malformed URI parameters."),
                 CClientUIInterface::ICON_WARNING);
     }
 
@@ -811,7 +811,7 @@ void BitcoinGUI::handleURI(QString strURI)
 {
     // URI has to be valid
     if (!walletFrame->handleURI(strURI))
-        message(tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid Torrentcoin address or malformed URI parameters."),
+        message(tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid tornt address or malformed URI parameters."),
                   CClientUIInterface::ICON_WARNING);
 }
 

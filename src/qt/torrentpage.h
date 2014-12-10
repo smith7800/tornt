@@ -1,14 +1,14 @@
-#ifndef TorrentPage_H
-#define TorrentPage_H
+#ifndef torntPage_H
+#define torntPage_H
 
 #include <QDialog>
 #include <QtSql>
 #include <QThread>
 
 namespace Ui {
-    class TorrentPage;
+    class torntPage;
 }
-class TorrentTableModel;
+class torntTableModel;
 class ClientModel;
 
 QT_BEGIN_NAMESPACE
@@ -21,26 +21,26 @@ QT_END_NAMESPACE
 
 /** Widget that shows a list of sending or receiving addresses.
   */
-class TorrentPage : public QDialog
+class torntPage : public QDialog
 {
     Q_OBJECT
 
 public:
 
-    explicit TorrentPage(QWidget *parent = 0);
-    ~TorrentPage();
+    explicit torntPage(QWidget *parent = 0);
+    ~torntPage();
 
-    void setModel(TorrentTableModel *model);
+    void setModel(torntTableModel *model);
     void setClientModel(ClientModel *model);
 
     const QString &getReturnValue() const { return returnValue; }
     void startExecutor();
 
 public slots:
-    void refreshTorrentTable();
+    void refreshtorntTable();
 private:
-    Ui::TorrentPage *ui;
-    TorrentTableModel *model;
+    Ui::torntPage *ui;
+    torntTableModel *model;
     ClientModel *clientModel;
     QString returnValue;
     QSortFilterProxyModel *proxyModel;
@@ -63,4 +63,4 @@ private:
 
 };
 
-#endif // TorrentPage_H
+#endif // torntPage_H

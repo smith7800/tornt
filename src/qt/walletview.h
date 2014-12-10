@@ -16,7 +16,7 @@ class AddressBookPage;
 class SendCoinsDialog;
 class SignVerifyMessageDialog;
 class RPCConsole;
-class TorrentPage;
+class torntPage;
 
 QT_BEGIN_NAMESPACE
 class QLabel;
@@ -66,7 +66,7 @@ private:
 
     TransactionView *transactionView;
 	
-	TorrentPage *torrentPage;
+	torntPage *torntPage;
 
 public slots:
     /** Switch to overview (home) page */
@@ -101,7 +101,7 @@ public slots:
 
     void setEncryptionStatus();
 	
-	void gotoTorrentPage();
+	void gototorntPage();
 
 signals:
     /** Signal that we want to show the main window */

@@ -55,7 +55,7 @@ public slots:
     void gotoSignMessageTab(QString addr = "");
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
-	void gotoTorrentPage();
+	void gototorntPage();
 
     /** Encrypt the wallet */
     void encryptWallet(bool status);

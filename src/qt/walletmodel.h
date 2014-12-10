@@ -21,7 +21,7 @@ class COutput;
 class COutPoint;
 class uint256;
 class CCoinControl;
-class TorrentTableModel;
+class torntTableModel;
 
 QT_BEGIN_NAMESPACE
 class QTimer;
@@ -67,7 +67,7 @@ public:
     OptionsModel *getOptionsModel();
     AddressTableModel *getAddressTableModel();
     TransactionTableModel *getTransactionTableModel();
-    TorrentTableModel *getTorrentTableModel();
+    torntTableModel *gettorntTableModel();
     qint64 getBalance(const CCoinControl *coinControl=NULL) const;
     qint64 getUnconfirmedBalance() const;
     qint64 getImmatureBalance() const;
@@ -141,7 +141,7 @@ private:
     AddressTableModel *addressTableModel;
     TransactionTableModel *transactionTableModel;
 
-TorrentTableModel *torrentTableModel;
+torntTableModel *torntTableModel;
     // Cache some values to be able to detect changes
     qint64 cachedBalance;
     qint64 cachedUnconfirmedBalance;

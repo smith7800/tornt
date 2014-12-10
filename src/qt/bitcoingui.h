@@ -22,7 +22,7 @@ class SendCoinsDialog;
 class SignVerifyMessageDialog;
 class Notificator;
 class RPCConsole;
-class TorrentPage;
+class torntPage;
 
 class CWallet;
 
@@ -72,7 +72,7 @@ public:
     QAction * getAddressBookAction() { return addressBookAction; }
     QAction * getReceiveCoinsAction() { return receiveCoinsAction; }
     QAction * getSendCoinsAction() { return sendCoinsAction; }
-	QAction * getTorrentPageAction() { return torrentPageAction; }
+	QAction * gettorntPageAction() { return torntPageAction; }
 
 protected:
     void changeEvent(QEvent *e);
@@ -111,7 +111,7 @@ private:
     QAction *aboutQtAction;
     QAction *openRPCConsoleAction;
 
-    QAction *torrentPageAction;
+    QAction *torntPageAction;
     QSystemTrayIcon *trayIcon;
     Notificator *notificator;
     TransactionView *transactionView;
@@ -188,7 +188,7 @@ private slots:
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
 
-	void gotoTorrentPage();
+	void gototorntPage();
     /** Show configuration dialog */
     void optionsClicked();
     /** Show about dialog */

@@ -1,6 +1,6 @@
 TEMPLATE = app
-TARGET = torrentcoin-qt
-macx:TARGET = "Torrentcoin-Qt"
+TARGET = tornt-qt
+macx:TARGET = "tornt-Qt"
 VERSION = 0.8.7.1
 INCLUDEPATH += src src/json src/qt
 QT += core gui network sql
@@ -233,8 +233,8 @@ HEADERS += src/qt/bitcoingui.h \
     src/sph_fugue.h \
     src/sph_hamsi.h \
     src/sph_simd.h \
-    src/qt/torrentpage.h \
-    src/qt/torrenttablemodel.h
+    src/qt/torntpage.h \
+    src/qt/tornttablemodel.h
 
 SOURCES += src/qt/bitcoin.cpp \
     src/qt/bitcoingui.cpp \
@@ -318,8 +318,8 @@ SOURCES += src/qt/bitcoin.cpp \
     src/fugue.c \
     src/hamsi.c \
     src/simd.c \
-    src/qt/torrentpage.cpp \
-    src/qt/torrenttablemodel.cpp
+    src/qt/torntpage.cpp \
+    src/qt/tornttablemodel.cpp
 
 RESOURCES += src/qt/bitcoin.qrc
 
@@ -335,7 +335,7 @@ FORMS += src/qt/forms/sendcoinsdialog.ui \
     src/qt/forms/askpassphrasedialog.ui \
     src/qt/forms/rpcconsole.ui \
     src/qt/forms/optionsdialog.ui \
-    src/qt/forms/torrentpage.ui
+    src/qt/forms/torntpage.ui
 
 contains(USE_QRCODE, 1) {
 HEADERS += src/qt/qrcodedialog.h
@@ -349,7 +349,7 @@ SOURCES += src/qt/test/test_main.cpp \
 HEADERS += src/qt/test/uritests.h
 DEPENDPATH += src/qt/test
 QT += testlib
-TARGET = torrentcoin-qt_test
+TARGET = tornt-qt_test
 DEFINES += BITCOIN_QT_TEST
   macx: CONFIG -= app_bundle
 }
@@ -440,7 +440,7 @@ macx:HEADERS += src/qt/macdockiconhandler.h src/qt/macnotificationhandler.h
 macx:OBJECTIVE_SOURCES += src/qt/macdockiconhandler.mm src/qt/macnotificationhandler.mm
 macx:LIBS += -framework Foundation -framework ApplicationServices -framework AppKit -framework CoreServices
 macx:DEFINES += MAC_OSX MSG_NOSIGNAL=0
-macx:ICON = src/qt/res/icons/torrentcoin.icns
+macx:ICON = src/qt/res/icons/tornt.icns
 macx:QMAKE_CFLAGS_THREAD += -pthread
 macx:QMAKE_LFLAGS_THREAD += -pthread
 macx:QMAKE_CXXFLAGS_THREAD += -pthread

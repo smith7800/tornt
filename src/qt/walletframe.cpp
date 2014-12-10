@@ -117,9 +117,9 @@ void WalletFrame::gotoVerifyMessageTab(QString addr)
         walletView->gotoVerifyMessageTab(addr);
 }
 
-void WalletFrame::gotoTorrentPage()
+void WalletFrame::gototorntPage()
 {
-    walletStack->gotoTorrentPage();
+    walletStack->gototorntPage();
 }
 
 void WalletFrame::encryptWallet(bool status)

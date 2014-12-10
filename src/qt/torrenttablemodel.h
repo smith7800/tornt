@@ -1,5 +1,5 @@
-#ifndef TorrentTableModel_H
-#define TorrentTableModel_H
+#ifndef torntTableModel_H
+#define torntTableModel_H
 
 #include <QAbstractTableModel>
 #include <QStringList>
@@ -7,18 +7,18 @@
 
 
 
-class TorrentTablePriv;
+class torntTablePriv;
 class WalletModel;
 
 /**
    Qt model of the address book in the core. This allows views to access and modify the address book.
  */
-class TorrentTableModel : public QAbstractTableModel
+class torntTableModel : public QAbstractTableModel
 {
     Q_OBJECT
 public:
-    explicit TorrentTableModel(WalletModel *parent = 0);
-    ~TorrentTableModel();
+    explicit torntTableModel(WalletModel *parent = 0);
+    ~torntTableModel();
 
     enum ColumnIndex {
         Title = 0,
@@ -30,7 +30,7 @@ public:
         /** Type of transaction */
         TypeRole = Qt::UserRole,
         /** Date and time this transaction was created */
-        TorrentRole
+        torntRole
     };
 
     /** @name Methods overridden from QAbstractTableModel
@@ -41,11 +41,11 @@ public:
     QVariant headerData(int section, Qt::Orientation orientation, int role) const;
     QModelIndex index(int row, int column, const QModelIndex & parent) const;
 
-    void refreshTorrentTable();    
+    void refreshtorntTable();    
 
 private:
     WalletModel *walletModel;
-    TorrentTablePriv *priv;
+    torntTablePriv *priv;
     QStringList columns;
     QSqlDatabase db;
 
@@ -53,7 +53,7 @@ private:
     
 public slots:
 
-    friend class TorrentTablePriv;
+    friend class torntTablePriv;
 };
 
-#endif // TorrentTableModel_H
+#endif // torntTableModel_H

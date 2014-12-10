@@ -6,13 +6,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About Torrentcoin</source>
-        <translation>About Torrentcoin</translation>
+        <source>About tornt</source>
+        <translation>About tornt</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;Torrentcoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;Torrentcoin&lt;/b&gt; version</translation>
+        <source>&lt;b&gt;tornt&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;tornt&lt;/b&gt; version</translation>
     </message>
     <message>
         <location line="+57"/>
@@ -36,8 +36,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+0"/>
-        <source>The Torrentcoin developers</source>
-        <translation>The Torrentcoin developers</translation>
+        <source>The tornt developers</source>
+        <translation>The tornt developers</translation>
     </message>
 </context>
 <context>
@@ -69,8 +69,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="+63"/>
-        <source>These are your Torrentcoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>These are your Torrentcoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</translation>
+        <source>These are your tornt addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>These are your tornt addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</translation>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="+14"/>
@@ -84,8 +84,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a Torrentcoin address</source>
-        <translation>Sign a message to prove you own a Torrentcoin address</translation>
+        <source>Sign a message to prove you own a tornt address</source>
+        <translation>Sign a message to prove you own a tornt address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -109,8 +109,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-44"/>
-        <source>Verify a message to ensure it was signed with a specified Torrentcoin address</source>
-        <translation>Verify a message to ensure it was signed with a specified Torrentcoin address</translation>
+        <source>Verify a message to ensure it was signed with a specified tornt address</source>
+        <translation>Verify a message to ensure it was signed with a specified tornt address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -124,8 +124,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="-5"/>
-        <source>These are your Torrentcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>These are your Torrentcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</translation>
+        <source>These are your tornt addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>These are your tornt addresses for sending payments. Always check the amount and the receiving address before sending coins.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -250,8 +250,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR torrentcoins&lt;/b&gt;!</source>
-        <translation>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR torrentcoins&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR tornts&lt;/b&gt;!</source>
+        <translation>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR tornts&lt;/b&gt;!</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -277,8 +277,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-56"/>
-        <source>Torrentcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your torrentcoins from being stolen by malware infecting your computer.</source>
-        <translation>Torrentcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your torrentcoins from being stolen by malware infecting your computer.</translation>
+        <source>tornt will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your tornts from being stolen by malware infecting your computer.</source>
+        <translation>tornt will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your tornts from being stolen by malware infecting your computer.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -376,8 +376,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about Torrentcoin</source>
-        <translation>Show information about Torrentcoin</translation>
+        <source>Show information about tornt</source>
+        <translation>Show information about tornt</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -421,13 +421,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-347"/>
-        <source>Send coins to a Torrentcoin address</source>
-        <translation>Send coins to a Torrentcoin address</translation>
+        <source>Send coins to a tornt address</source>
+        <translation>Send coins to a tornt address</translation>
     </message>
     <message>
         <location line="+49"/>
-        <source>Modify configuration options for Torrentcoin</source>
-        <translation>Modify configuration options for Torrentcoin</translation>
+        <source>Modify configuration options for tornt</source>
+        <translation>Modify configuration options for tornt</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -457,8 +457,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="-165"/>
         <location line="+530"/>
-        <source>Torrentcoin</source>
-        <translation>Torrentcoin</translation>
+        <source>tornt</source>
+        <translation>tornt</translation>
     </message>
     <message>
         <location line="-530"/>
@@ -482,8 +482,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+22"/>
-        <source>&amp;About Torrentcoin</source>
-        <translation>&amp;About Torrentcoin</translation>
+        <source>&amp;About tornt</source>
+        <translation>&amp;About tornt</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -502,13 +502,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your Torrentcoin addresses to prove you own them</source>
-        <translation>Sign messages with your Torrentcoin addresses to prove you own them</translation>
+        <source>Sign messages with your tornt addresses to prove you own them</source>
+        <translation>Sign messages with your tornt addresses to prove you own them</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified Torrentcoin addresses</source>
-        <translation>Verify messages to ensure they were signed with specified Torrentcoin addresses</translation>
+        <source>Verify messages to ensure they were signed with specified tornt addresses</source>
+        <translation>Verify messages to ensure they were signed with specified tornt addresses</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -538,15 +538,15 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+47"/>
-        <source>Torrentcoin client</source>
-        <translation>Torrentcoin client</translation>
+        <source>tornt client</source>
+        <translation>tornt client</translation>
     </message>
     <message numerus="yes">
         <location line="+141"/>
-        <source>%n active connection(s) to Torrentcoin network</source>
+        <source>%n active connection(s) to tornt network</source>
         <translation>
-            <numerusform>%n active connection to Torrentcoin network</numerusform>
-            <numerusform>%n active connections to Torrentcoin network</numerusform>
+            <numerusform>%n active connection to tornt network</numerusform>
+            <numerusform>%n active connections to tornt network</numerusform>
         </translation>
     </message>
     <message>
@@ -670,8 +670,8 @@ Address: %4
     <message>
         <location line="-23"/>
         <location line="+23"/>
-        <source>URI can not be parsed! This can be caused by an invalid Torrentcoin address or malformed URI parameters.</source>
-        <translation>URI can not be parsed! This can be caused by an invalid Torrentcoin address or malformed URI parameters.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid tornt address or malformed URI parameters.</source>
+        <translation>URI can not be parsed! This can be caused by an invalid tornt address or malformed URI parameters.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -685,8 +685,8 @@ Address: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+111"/>
-        <source>A fatal error occurred. Torrentcoin can no longer continue safely and will quit.</source>
-        <translation>A fatal error occurred. Torrentcoin can no longer continue safely and will quit.</translation>
+        <source>A fatal error occurred. tornt can no longer continue safely and will quit.</source>
+        <translation>A fatal error occurred. tornt can no longer continue safely and will quit.</translation>
     </message>
 </context>
 <context>
@@ -751,8 +751,8 @@ Address: %4
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid Torrentcoin address.</source>
-        <translation>The entered address &quot;%1&quot; is not a valid Torrentcoin address.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid tornt address.</source>
+        <translation>The entered address &quot;%1&quot; is not a valid tornt address.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -770,8 +770,8 @@ Address: %4
     <message>
         <location filename="../guiutil.cpp" line="+424"/>
         <location line="+12"/>
-        <source>Torrentcoin-Qt</source>
-        <translation>Torrentcoin-Qt</translation>
+        <source>tornt-Qt</source>
+        <translation>tornt-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -833,13 +833,13 @@ Address: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start Torrentcoin after logging in to the system.</source>
-        <translation>Automatically start Torrentcoin after logging in to the system.</translation>
+        <source>Automatically start tornt after logging in to the system.</source>
+        <translation>Automatically start tornt after logging in to the system.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start Torrentcoin on system login</source>
-        <translation>&amp;Start Torrentcoin on system login</translation>
+        <source>&amp;Start tornt on system login</source>
+        <translation>&amp;Start tornt on system login</translation>
     </message>
     <message>
         <location line="+35"/>
@@ -858,8 +858,8 @@ Address: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the Torrentcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the Torrentcoin client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <source>Automatically open the tornt client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the tornt client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -868,8 +868,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the Torrentcoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Connect to the Torrentcoin network through a SOCKS proxy (e.g. when connecting through Tor).</translation>
+        <source>Connect to the tornt network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Connect to the tornt network through a SOCKS proxy (e.g. when connecting through Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -943,8 +943,8 @@ Address: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting Torrentcoin.</source>
-        <translation>The user interface language can be set here. This setting will take effect after restarting Torrentcoin.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting tornt.</source>
+        <translation>The user interface language can be set here. This setting will take effect after restarting tornt.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -958,8 +958,8 @@ Address: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show Torrentcoin addresses in the transaction list or not.</source>
-        <translation>Whether to show Torrentcoin addresses in the transaction list or not.</translation>
+        <source>Whether to show tornt addresses in the transaction list or not.</source>
+        <translation>Whether to show tornt addresses in the transaction list or not.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1010,8 +1010,8 @@ Address: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting Torrentcoin.</source>
-        <translation>This setting will take effect after restarting Torrentcoin.</translation>
+        <source>This setting will take effect after restarting tornt.</source>
+        <translation>This setting will take effect after restarting tornt.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1029,8 +1029,8 @@ Address: %4
     <message>
         <location line="+50"/>
         <location line="+166"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Torrentcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the Torrentcoin network after a connection is established, but this process has not completed yet.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the tornt network after a connection is established, but this process has not completed yet.</source>
+        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the tornt network after a connection is established, but this process has not completed yet.</translation>
     </message>
     <message>
         <location line="-124"/>
@@ -1083,8 +1083,8 @@ Address: %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start torrentcoin: click-to-pay handler</source>
-        <translation>Cannot start torrentcoin: click-to-pay handler</translation>
+        <source>Cannot start tornt: click-to-pay handler</source>
+        <translation>Cannot start tornt: click-to-pay handler</translation>
     </message>
 </context>
 <context>
@@ -1233,8 +1233,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the Torrentcoin-Qt help message to get a list with possible Torrentcoin command-line options.</source>
-        <translation>Show the Torrentcoin-Qt help message to get a list with possible Torrentcoin command-line options.</translation>
+        <source>Show the tornt-Qt help message to get a list with possible tornt command-line options.</source>
+        <translation>Show the tornt-Qt help message to get a list with possible tornt command-line options.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1253,13 +1253,13 @@ Address: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>Torrentcoin - Debug window</source>
-        <translation>Torrentcoin - Debug window</translation>
+        <source>tornt - Debug window</source>
+        <translation>tornt - Debug window</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>Torrentcoin Core</source>
-        <translation>Torrentcoin Core</translation>
+        <source>tornt Core</source>
+        <translation>tornt Core</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1268,8 +1268,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the Torrentcoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Open the Torrentcoin debug log file from the current data directory. This can take a few seconds for large log files.</translation>
+        <source>Open the tornt debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Open the tornt debug log file from the current data directory. This can take a few seconds for large log files.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1278,8 +1278,8 @@ Address: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-30"/>
-        <source>Welcome to the Torrentcoin RPC console.</source>
-        <translation>Welcome to the Torrentcoin RPC console.</translation>
+        <source>Welcome to the tornt RPC console.</source>
+        <translation>Welcome to the tornt RPC console.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1462,8 +1462,8 @@ Address: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Torrentcoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Enter a Torrentcoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a tornt address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Enter a tornt address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
 </context>
 <context>
@@ -1527,8 +1527,8 @@ Address: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Torrentcoin address</source>
-        <translation>Sign the message to prove you own this Torrentcoin address</translation>
+        <source>Sign the message to prove you own this tornt address</source>
+        <translation>Sign the message to prove you own this tornt address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1563,8 +1563,8 @@ Address: %4
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified Torrentcoin address</source>
-        <translation>Verify the message to ensure it was signed with the specified Torrentcoin address</translation>
+        <source>Verify the message to ensure it was signed with the specified tornt address</source>
+        <translation>Verify the message to ensure it was signed with the specified tornt address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1579,8 +1579,8 @@ Address: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Torrentcoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Enter a Torrentcoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a tornt address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Enter a tornt address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1589,8 +1589,8 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter Torrentcoin signature</source>
-        <translation>Enter Torrentcoin signature</translation>
+        <source>Enter tornt signature</source>
+        <translation>Enter tornt signature</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -1663,8 +1663,8 @@ Address: %4
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+22"/>
-        <source>The Torrentcoin developers</source>
-        <translation>The Torrentcoin developers</translation>
+        <source>The tornt developers</source>
+        <translation>The tornt developers</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2216,8 +2216,8 @@ Address: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+94"/>
-        <source>Torrentcoin version</source>
-        <translation>Torrentcoin version</translation>
+        <source>tornt version</source>
+        <translation>tornt version</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -2226,8 +2226,8 @@ Address: %4
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or torrentcoind</source>
-        <translation>Send command to -server or torrentcoind</translation>
+        <source>Send command to -server or torntd</source>
+        <translation>Send command to -server or torntd</translation>
     </message>
     <message>
         <location line="-23"/>
@@ -2246,13 +2246,13 @@ Address: %4
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: torrentcoin.conf)</source>
-        <translation>Specify configuration file (default: torrentcoin.conf)</translation>
+        <source>Specify configuration file (default: tornt.conf)</source>
+        <translation>Specify configuration file (default: tornt.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: torrentcoind.pid)</source>
-        <translation>Specify pid file (default: torrentcoind.pid)</translation>
+        <source>Specify pid file (default: torntd.pid)</source>
+        <translation>Specify pid file (default: torntd.pid)</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -2329,24 +2329,24 @@ Address: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=torrentcoinrpc
+rpcuser=torntrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Torrentcoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;tornt Alert&quot; admin@foo.com
 </source>
         <translation>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=torrentcoinrpc
+rpcuser=torntrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Torrentcoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;tornt Alert&quot; admin@foo.com
 </translation>
     </message>
     <message>
@@ -2361,8 +2361,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Torrentcoin Alert&quot; admin@
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. Torrentcoin is probably already running.</source>
-        <translation>Cannot obtain a lock on data directory %s. Torrentcoin is probably already running.</translation>
+        <source>Cannot obtain a lock on data directory %s. tornt is probably already running.</source>
+        <translation>Cannot obtain a lock on data directory %s. tornt is probably already running.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2406,8 +2406,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Torrentcoin Alert&quot; admin@
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Torrentcoin will not work properly.</source>
-        <translation>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Torrentcoin will not work properly.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong tornt will not work properly.</source>
+        <translation>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong tornt will not work properly.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2656,8 +2656,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Torrentcoin Alert&quot; admin@
     </message>
     <message>
         <location line="+5"/>
-        <source>SSL options: (see the Torrentcoin Wiki for SSL setup instructions)</source>
-        <translation>SSL options: (see the Torrentcoin Wiki for SSL setup instructions)</translation>
+        <source>SSL options: (see the tornt Wiki for SSL setup instructions)</source>
+        <translation>SSL options: (see the tornt Wiki for SSL setup instructions)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2846,13 +2846,13 @@ for example: alertnotify=echo %%s | mail -s &quot;Torrentcoin Alert&quot; admin@
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Torrentcoin</source>
-        <translation>Error loading wallet.dat: Wallet requires newer version of Torrentcoin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of tornt</source>
+        <translation>Error loading wallet.dat: Wallet requires newer version of tornt</translation>
     </message>
     <message>
         <location line="+93"/>
-        <source>Wallet needed to be rewritten: restart Torrentcoin to complete</source>
-        <translation>Wallet needed to be rewritten: restart Torrentcoin to complete</translation>
+        <source>Wallet needed to be rewritten: restart tornt to complete</source>
+        <translation>Wallet needed to be rewritten: restart tornt to complete</translation>
     </message>
     <message>
         <location line="-95"/>
@@ -2911,8 +2911,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Torrentcoin Alert&quot; admin@
     </message>
     <message>
         <location line="-25"/>
-        <source>Unable to bind to %s on this computer. Torrentcoin is probably already running.</source>
-        <translation>Unable to bind to %s on this computer. Torrentcoin is probably already running.</translation>
+        <source>Unable to bind to %s on this computer. tornt is probably already running.</source>
+        <translation>Unable to bind to %s on this computer. tornt is probably already running.</translation>
     </message>
     <message>
         <location line="+64"/>

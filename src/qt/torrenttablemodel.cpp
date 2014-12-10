@@ -1,4 +1,4 @@
-#include "torrenttablemodel.h"
+#include "tornttablemodel.h"
 #include "guiutil.h"
 #include "bitcoinrpc.h"
 #include "base58.h"
@@ -27,7 +27,7 @@ using namespace boost;
 using namespace json_spirit;
 
 
-struct TorrentTableEntry
+struct torntTableEntry
 {
 
     QString title;
@@ -36,33 +36,33 @@ struct TorrentTableEntry
     QString amount;
 
 
-    TorrentTableEntry() {}
-    TorrentTableEntry(const QString &title,const QString &link,const QString &address,const QString &amount):
+    torntTableEntry() {}
+    torntTableEntry(const QString &title,const QString &link,const QString &address,const QString &amount):
         title(title),link(link),address(address),amount(amount) {}
 };
 
 
 
-class TorrentTablePriv
+class torntTablePriv
 {
 public:
 
-    QList<TorrentTableEntry> cachedTorrentTable;
-    TorrentTableModel *parent;
+    QList<torntTableEntry> cachedtorntTable;
+    torntTableModel *parent;
 
-    TorrentTablePriv(TorrentTableModel *parent):
+    torntTablePriv(torntTableModel *parent):
          parent(parent) {}
 
 
-    void getLastTorrent()
+    void getLasttornt()
     {
         try{
             QSqlQuery query;
-            query.exec(QString("select txid from torrent  order by blockindex desc limit 1000"));
+            query.exec(QString("select txid from tornt  order by blockindex desc limit 1000"));
             while (query.next())
             {
                 std::vector<std::string> args;
-                args.push_back("gettorrent");
+                args.push_back("gettornt");
                 args.push_back(query.value(0).toString().toStdString());
                 Value value = tableRPC.execute(args[0],RPCConvertValues(args[0], std::vector<std::string>(args.begin() + 1, args.end())));
                 if (value.type() == obj_type)
@@ -74,7 +74,7 @@ public:
                     std::string  address  = find_value(reply, "address").get_str();
                     std::string  amount  = find_value(reply, "amount").get_str();
 
-                    cachedTorrentTable.append(TorrentTableEntry(
+                    cachedtorntTable.append(torntTableEntry(
                                       QString::fromStdString(title),
                                      QString::fromStdString(link),
                                      QString::fromStdString(address),
@@ -104,22 +104,22 @@ public:
 
     void refreshTable()
     {
-        cachedTorrentTable.clear();
-        getLastTorrent();
+        cachedtorntTable.clear();
+        getLasttornt();
     }
 
 
 
     int size()
     {
-        return cachedTorrentTable.size();
+        return cachedtorntTable.size();
     }
 
-    TorrentTableEntry *index(int idx)
+    torntTableEntry *index(int idx)
     {
-        if(idx >= 0 && idx < cachedTorrentTable.size())
+        if(idx >= 0 && idx < cachedtorntTable.size())
         {
-            return &cachedTorrentTable[idx];
+            return &cachedtorntTable[idx];
         }
         else
         {
@@ -128,7 +128,7 @@ public:
     }
 
 
-    QString describe(TorrentTableEntry *rec)
+    QString describe(torntTableEntry *rec)
     {
 
         QString strHTML;
@@ -145,44 +145,44 @@ public:
     }
 };
 
-TorrentTableModel::TorrentTableModel(WalletModel *parent) :
+torntTableModel::torntTableModel(WalletModel *parent) :
     QAbstractTableModel(parent),priv(0)
 {
     columns << tr("Title") ;
     columns << tr("Address") ;
     columns << tr("Amount") ;
-    priv = new TorrentTablePriv(this);
+    priv = new torntTablePriv(this);
 }
 
-TorrentTableModel::~TorrentTableModel()
+torntTableModel::~torntTableModel()
 {
     delete priv;
 }
 
-int TorrentTableModel::rowCount(const QModelIndex &parent) const
+int torntTableModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return priv->size();
 }
 
-int TorrentTableModel::columnCount(const QModelIndex &parent) const
+int torntTableModel::columnCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return columns.length();
 }
 
-void TorrentTableModel::refreshTorrentTable()
+void torntTableModel::refreshtorntTable()
 {
     priv->refreshTable();
     emit layoutChanged();
 }
 
-QVariant TorrentTableModel::data(const QModelIndex &index, int role) const
+QVariant torntTableModel::data(const QModelIndex &index, int role) const
 {
     if(!index.isValid())
         return QVariant();
 
-    TorrentTableEntry *rec = static_cast<TorrentTableEntry*>(index.internalPointer());
+    torntTableEntry *rec = static_cast<torntTableEntry*>(index.internalPointer());
 
     if(role == Qt::DisplayRole)
     {
@@ -196,7 +196,7 @@ QVariant TorrentTableModel::data(const QModelIndex &index, int role) const
             return rec->amount;
         }
     }
-    else if(role == TorrentRole)
+    else if(role == torntRole)
     {
         return priv->describe(rec);
     }
@@ -205,7 +205,7 @@ QVariant TorrentTableModel::data(const QModelIndex &index, int role) const
 }
 
 
-QVariant TorrentTableModel::headerData(int section, Qt::Orientation orientation, int role) const
+QVariant torntTableModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
     if(orientation == Qt::Horizontal)
     {
@@ -219,10 +219,10 @@ QVariant TorrentTableModel::headerData(int section, Qt::Orientation orientation,
 
 
 
-QModelIndex TorrentTableModel::index(int row, int column, const QModelIndex & parent) const
+QModelIndex torntTableModel::index(int row, int column, const QModelIndex & parent) const
 {
    Q_UNUSED(parent);
-    TorrentTableEntry *data = priv->index(row);
+    torntTableEntry *data = priv->index(row);
     if(data)
     {
         return createIndex(row, column, priv->index(row));

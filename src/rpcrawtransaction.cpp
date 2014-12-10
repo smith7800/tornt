@@ -197,7 +197,7 @@ Value listunspent(const Array& params, bool fHelp)
         {
             CBitcoinAddress address(input.get_str());
             if (!address.IsValid())
-                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid Torrentcoin address: ")+input.get_str());
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid tornt address: ")+input.get_str());
             if (setAddress.count(address))
                 throw JSONRPCError(RPC_INVALID_PARAMETER, string("Invalid parameter, duplicated address: ")+input.get_str());
            setAddress.insert(address);
@@ -296,7 +296,7 @@ Value createrawtransaction(const Array& params, bool fHelp)
     {
         CBitcoinAddress address(s.name_);
         if (!address.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid Torrentcoin address: ")+s.name_);
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid tornt address: ")+s.name_);
 
         if (setAddress.count(address))
             throw JSONRPCError(RPC_INVALID_PARAMETER, string("Invalid parameter, duplicated address: ")+s.name_);
@@ -603,10 +603,10 @@ Value getnormalizedtxid(const Array& params, bool fHelp)
     return hashNormalized.GetHex();
 }
 
-Value gettorrent(const Array& params, bool fHelp)
+Value gettornt(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 1)
-        throw runtime_error("gettorrent <txid> \n");
+        throw runtime_error("gettornt <txid> \n");
 
     
     
@@ -622,7 +622,7 @@ Value gettorrent(const Array& params, bool fHelp)
          return false;
     }*/
     try{ 
-        std::string torrentStr;
+        std::string torntStr;
         for (unsigned int i = 0; i < tx.vout.size(); i++)
         {
             const CTxOut& txout = tx.vout[i];
@@ -642,16 +642,16 @@ Value gettorrent(const Array& params, bool fHelp)
                     int x;
                     sscanf(s.c_str(), "%x", &x); 
                     t.assign(t,4,x*2); 
-                    torrentStr.append(t);
+                    torntStr.append(t);
                 }
             }
         }
 
-        int len = torrentStr.length();
+        int len = torntStr.length();
         std::string strReply;
         for(int i=0; i< len; i+=2)
         {
-            std::string byte = torrentStr.substr(i,2);
+            std::string byte = torntStr.substr(i,2);
             char chr = (char) (int)strtol(byte.c_str(), NULL, 16);
             strReply.push_back(chr);
         }
