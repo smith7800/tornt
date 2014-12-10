@@ -2798,7 +2798,7 @@ bool InitBlockIndex() {
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = "piratebay shut down then reopened;
+        const char* pszTimestamp = "piratebay shut down then reopened";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
