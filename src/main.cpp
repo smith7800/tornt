@@ -2810,13 +2810,13 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1418211243;
+        block.nTime    = 1418227296;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 4265481;
+        block.nNonce   = 0;
 
         if (fTestNet)
         {
-            block.nTime    = 1418211243;
+            block.nTime    = 1418227296;
             block.nNonce   = 0;
         }
 
@@ -2827,7 +2827,7 @@ bool InitBlockIndex() {
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0xbeb4d1eecb49d4e7fc80b610c618ba8bd4427321015f1c8410de4a8028aea0f5"));
+        assert(block.hashMerkleRoot == uint256("0xec2c0dcc72781ea777391323ca0f72c2ee6a5b9d8fecef39c3585a06a3c6e2e6"));
         assert(hash == hashGenesisBlock);
 
         // Start new block file
